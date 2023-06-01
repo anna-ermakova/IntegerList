@@ -69,7 +69,7 @@ public class IntegerArrayListTest {
 
     @Test
     public void removeByValueNegativeTest() {
-        assertThrows(StringListIndexOutOfBoundsException.class, () -> out.remove(6));
+        assertThrows(ElementNotFoundException.class, () -> out.remove(Integer.valueOf(6)));
     }
 
     @Test
