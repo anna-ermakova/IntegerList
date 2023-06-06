@@ -3,6 +3,7 @@ package org.example;
 import java.util.Arrays;
 import java.util.Objects;
 
+
 public class IntegerArrayList implements IntegerList {
     private Integer[] data;
     private int currentSize;
@@ -21,7 +22,7 @@ public class IntegerArrayList implements IntegerList {
     @Override
     public Integer add(Integer item) {
         if (currentSize == data.length) {
-            resize(currentSize + 1);
+            grow();
         }
         data[currentSize] = item;
         currentSize++;
@@ -31,15 +32,25 @@ public class IntegerArrayList implements IntegerList {
     @Override
     public Integer add(int index, Integer item) {
         checkBounds(index);
-        if (currentSize == data.length) {
-            resize(currentSize + 1);
+        if (currentSize >= data.length) {
+            grow();
         }
-        for (int i = currentSize; i > index; i--) {
-            data[i] = data[i - 1];
+        if (currentSize < data.length) {
+            if (index < currentSize) {
+                System.arraycopy(data, index, data, index + 1, currentSize - index);
+            }
+            currentSize++;
+            return data[index] = item;
+        } else {
+            throw new StringListIndexOutOfBoundsException("Список полон!");
         }
-        data[index] = item;
-        currentSize++;
-        return item;
+
+    }
+
+    private void grow() {
+        Integer[] data = new Integer[(int) (this.data.length * 1.5)];
+        System.arraycopy(this.data, 0, data, 0, this.data.length);
+        this.data = data;
     }
 
     @Override
@@ -72,8 +83,43 @@ public class IntegerArrayList implements IntegerList {
 
     @Override
     public boolean contains(Integer item) {
-        sort();
+        Integer[] copy = toArray();
+        sort(copy);
         return search(item);
+    }
+
+    private void sort(Integer[] arr) {
+        sort(arr, 0, arr.length - 1);
+    }
+
+    private void sort(Integer[] arr, int begin, int end) {
+        if (begin < end) {
+            int partitionIndex = partition(arr, begin, end);
+
+            sort(arr, begin, partitionIndex - 1);
+            sort(arr, partitionIndex + 1, end);
+        }
+    }
+
+    private int partition(Integer[] arr, int begin, int end) {
+        Integer pivot = arr[end];
+        int i = (begin - 1);
+
+        for (int j = begin; j < end; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+
+        swap(arr, i + 1, end);
+        return i + 1;
+    }
+
+    private void swap(Integer[] arr, int left, int right) {
+        Integer temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
     }
 
     @Override
@@ -164,19 +210,6 @@ public class IntegerArrayList implements IntegerList {
         Integer[] newData = new Integer[size];
         System.arraycopy(data, 0, newData, 0, currentSize);
         data = newData;
-    }
-
-    private void sort() {
-        int in, out;
-        for (out = 1; out < currentSize; out++) {
-            Integer temp = data[out];
-            in = out;
-            while (in > 0 && data[in - 1] >= temp) {
-                data[in] = data[in - 1];
-                in--;
-            }
-            data[in] = temp;
-        }
     }
 
     private boolean search(Integer item) {

@@ -5,7 +5,7 @@ public class StringListIndexOutOfBoundsException extends RuntimeException {
         super();
     }
 
-    public StringListIndexOutOfBoundsException (String massage) {
+    public StringListIndexOutOfBoundsException(String massage) {
         super(massage);
     }
 }

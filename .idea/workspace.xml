@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaf48bbf-e95b-4a83-836b-2fea661774a3" name="Changes" comment="Реализовала интерфейс с int, добавила методы сортировки">
+    <list default="true" id="aaf48bbf-e95b-4a83-836b-2fea661774a3" name="Changes" comment="исправила тест remove,ДЗ готово">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/IntegerArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IntegerArrayListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IntegerArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IntegerArrayList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="b70812ba8ea494e049670de3ba5af15ece1957e9" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,20 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/ermak/IdeaProjects/IntegerList",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ermak/IdeaProjects/IntegerList&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.IntegerArrayListTest">
     <configuration name="IntegerArrayListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IntegerList" />
@@ -69,11 +69,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegerArrayListTest.indexOfNegativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegerArrayListTest.indexAdditionNegativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IntegerList" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="IntegerArrayListTest" />
-      <option name="METHOD_NAME" value="indexOfNegativeTest(java.lang.Integer,int)" />
+      <option name="METHOD_NAME" value="indexAdditionNegativeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntegerArrayListTest.indexAdditionPositiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IntegerList" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IntegerArrayListTest" />
+      <option name="METHOD_NAME" value="indexAdditionPositiveTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -89,21 +99,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegerArrayListTest.removeByIndexNegativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegerArrayListTest.simpleAdditionPositiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IntegerList" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="IntegerArrayListTest" />
-      <option name="METHOD_NAME" value="removeByIndexNegativeTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IntegerArrayListTest.removeByValueNegativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IntegerList" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IntegerArrayListTest" />
-      <option name="METHOD_NAME" value="removeByValueNegativeTest" />
+      <option name="METHOD_NAME" value="simpleAdditionPositiveTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,10 +112,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.IntegerArrayListTest" />
-        <item itemvalue="JUnit.IntegerArrayListTest.removeByValueNegativeTest" />
-        <item itemvalue="JUnit.IntegerArrayListTest.removeByIndexNegativeTest" />
         <item itemvalue="JUnit.IntegerArrayListTest.lastIndexOfTest" />
-        <item itemvalue="JUnit.IntegerArrayListTest.indexOfNegativeTest" />
+        <item itemvalue="JUnit.IntegerArrayListTest.indexAdditionNegativeTest" />
+        <item itemvalue="JUnit.IntegerArrayListTest.indexAdditionPositiveTest" />
+        <item itemvalue="JUnit.IntegerArrayListTest.simpleAdditionPositiveTest" />
       </list>
     </recent_temporary>
   </component>
@@ -130,6 +130,7 @@
       <workItem from="1685554073432" duration="12890000" />
       <workItem from="1685619293636" duration="1629000" />
       <workItem from="1685621111903" duration="1364000" />
+      <workItem from="1686054511935" duration="7749000" />
     </task>
     <task id="LOCAL-00001" summary="Реализовала интерфейс с int, добавила методы сортировки">
       <created>1685567357857</created>
@@ -149,7 +150,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="intList" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -160,6 +173,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Реализовала интерфейс с int, добавила методы сортировки" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IntegerList$IntegerArrayListTest.ic" NAME="IntegerArrayListTest Coverage Results" MODIFIED="1685566840577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/IntegerList$IntegerArrayListTest.ic" NAME="IntegerArrayListTest Coverage Results" MODIFIED="1685632400661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
